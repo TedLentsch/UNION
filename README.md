@@ -2,7 +2,7 @@
 
 
 
-[[`ArXiv`](https://arxiv.org/abs/2405.15688)] [[`BibTeX`](#citation-information)]
+[[`arXiv`](https://arxiv.org/abs/2405.15688)] [[`BibTeX`](#citation-information)]
 
 
 
