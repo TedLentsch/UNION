@@ -1,4 +1,4 @@
-# UNION: Unsupervised 3D Object Detection using Appearance-based Pseudo-Classes
+# UNION: Unsupervised 3D Object Detection using Appearance-based Pseudo-Classes [NeurIPS'24]
 
 
 
