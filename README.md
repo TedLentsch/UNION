@@ -1,4 +1,4 @@
-# UNION: Unsupervised 3D Object Detection using Appearance-based Pseudo-Classes [under review]
+# UNION: Unsupervised 3D Object Detection using Appearance-based Pseudo-Classes
 
 
 
@@ -6,6 +6,27 @@
 
 
 
++ [2024-09-25] *UNION has been accepted for NeurIPS'24!*
++ [2024-05-24] *Paper release on arXiv.*
+
+
+
+### Installation
+Coming soon!
+
+
+
+### Generate pseudo-labels
+Coming soon!
+
+
+
+### Results on nuScenes [class-agnostic detection]
+Coming soon!
+
+
+
+### Results on nuScenes [multi-class detection]
 Coming soon!
 
 
@@ -19,7 +40,7 @@ If UNION is useful to your research, please kindly recognize our contributions b
 @article{lentsch2024union,
   title={{UNION}: Unsupervised {3D} Object Detection using Object Appearance-based Pseudo-Classes},
   author={Lentsch, Ted and Caesar, Holger and Gavrila, Dariu M},
-  journal={arXiv preprint arXiv:2405.15688},
+  journal={Advances in Neural Information Processing Systems},
   year={2024}
 }
 ```
