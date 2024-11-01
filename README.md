@@ -6,8 +6,9 @@
 
 
 
++ [2024-10-31] *Camera-ready release on arXiv (v2)!*
 + [2024-09-25] *UNION has been accepted for NeurIPS'24!*
-+ [2024-05-24] *Paper release on arXiv.*
++ [2024-05-24] *Paper release on arXiv (v1)!*
 
 
 
