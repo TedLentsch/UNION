@@ -23,16 +23,16 @@ Coming soon!
 
 
 ### Results on nuScenes [class-agnostic detection]
-Class-agnostic 3D object detection performance on the nuScenes validation split (150 scenes).
-For each object discovery method, the detector CenterPoint has been trained with the method's generated pseudo-bounding boxes on the nuScenes training split (700 scenes).
+Class-agnostic 3D object detection performance on the [nuScenes](https://arxiv.org/abs/1903.11027) validation split (150 scenes).
+For each object discovery method, the detector [CenterPoint](https://arxiv.org/pdf/2006.11275) has been trained with the method's generated pseudo-bounding boxes on the [nuScenes](https://arxiv.org/abs/1903.11027) training split (700 scenes).
 The AAE is set to 1.0 by default for all methods.
 
-| Method           | Labels       | Self-Training                 | AP ↑     | NDS ↑    | ATE ↓     | ASE ↓     | AOE ↓     | AVE ↓     |
-|------------------|--------------|-------------------------------|----------|----------|-----------|-----------|-----------|-----------|
-| HDBSCAN          | LiDAR        | :negative_squared_cross_mark: | 13.8     | 15.9     | **0.574** | 0.522     | 1.601     | 1.531     |
-| OYSTER           | LiDAR        | :ballot_box_with_check:       | 9.1      | 11.5     | 0.784     | 0.521     | 1.514     | -         |
-| LISO             | LiDAR        | :ballot_box_with_check:       | 10.9     | 13.9     | 0.750     | **0.409** | 1.062     | -         |
-| UNION (ours)     | LiDAR+Camera | :negative_squared_cross_mark: | **38.4** | **31.2** | 0.589     | 0.497     | **0.874** | **0.836** |
+| Method           | Conference                                                       | Labels       | Self-Training                 | AP ↑     | NDS ↑    | ATE ↓     | ASE ↓     | AOE ↓     | AVE ↓     |
+|------------------|------------------------------------------------------------------|--------------|-------------------------------|----------|----------|-----------|-----------|-----------|-----------|
+| HDBSCAN          | [JOSS'17](https://joss.theoj.org/papers/10.21105/joss.00205.pdf) | LiDAR        | :negative_squared_cross_mark: | 13.8     | 15.9     | **0.574** | 0.522     | 1.601     | 1.531     |
+| OYSTER           | [CVPR'23](https://arxiv.org/pdf/2311.02007)                      | LiDAR        | :ballot_box_with_check:       | 9.1      | 11.5     | 0.784     | 0.521     | 1.514     | -         |
+| LISO             | [ECCV'24](https://arxiv.org/pdf/2403.07071)                      | LiDAR        | :ballot_box_with_check:       | 10.9     | 13.9     | 0.750     | **0.409** | 1.062     | -         |
+| UNION (ours)     | [NeurIPS'24](https://arxiv.org/pdf/2405.15688)                   | LiDAR+Camera | :negative_squared_cross_mark: | **38.4** | **31.2** | 0.589     | 0.497     | **0.874** | **0.836** |
 
 
 
