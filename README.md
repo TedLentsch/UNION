@@ -13,6 +13,11 @@
 
 
 
+### Pipeline overview
+![](readme-data/UNION-pipeline-overview.png)
+
+
+
 ### Installation
 Coming soon!
 
