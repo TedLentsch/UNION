@@ -1,0 +1,55 @@
+name: UNION-Env
+channels:
+  - conda-forge
+  - defaults
+  - pytorch
+  - pytorch3d
+  - nvidia
+  - open3d-admin
+dependencies:
+  - python=3.8
+
+  # PyTorch and CUDA
+  - pytorch=2.0
+  - torchvision=0.15
+  - torchaudio=2.0
+  - pytorch-cuda=11.8
+
+  # Data and Visualization
+  - numpy=1.24
+  - matplotlib=3.5
+  - pandas=1.5
+  - k3d=2.15
+  - open3d=0.11
+
+  # Machine Learning
+  - scikit-learn=1.3
+  - hdbscan=0.8
+
+  # Utility Libraries
+  - pyyaml=6.0
+  - addict=2.4
+  - plyfile=1.1
+  - eigen=3.4
+
+  # Jupyter and Widgets
+  - jupyterlab=3.6
+  - jupyterlab_widgets=1.1
+  - jupyterlab_server=2.27
+  - jupyterlab_pygments=0.3
+  - jupyter_server=2.14
+  - jupyter_core=5.7
+  - jupyter_console=6.6
+  - jupyter_client=7.4
+  - notebook=6.5
+  - ipywidgets=7.8
+  - ipykernel=6.29
+  - ipython=8.12
+  - zeromq=4.3
+  - tornado=6.4
+
+  # Pip-installed dependencies
+  - pip=23.1
+  - pip:
+    - opencv-python==4.7.0.72
+    - nuscenes-devkit==1.1.10
