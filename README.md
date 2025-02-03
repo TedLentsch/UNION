@@ -70,7 +70,7 @@ _L_ and _C_ stand for _LiDAR_ and _camera_, respectively.
 ### Results on nuScenes [multi-class detection]
 Multi-class 3D object detection performance on [nuScenes](https://arxiv.org/abs/1903.11027) validation split (150 scenes).
 For each object discovery method, [CenterPoint](https://arxiv.org/pdf/2006.11275) has been trained with the method's generated pseudo-bounding boxes on [nuScenes](https://arxiv.org/abs/1903.11027) training split (700 scenes), and class-agnostic predictions are assigned to real classes based on their size, i.e. size prior (SP).
-Vehicle, pedestrian, and cyclist classes are used (see paper for more details).
+Vehicle, pedestrian, and cyclist classes are used, see paper for more details.
 AAE is set to 1.0 by default for all methods and classes.
 _UNION-Xpc_ stands for UNION trained with X pseudo-classes.
 _L_ and _C_ stand for _LiDAR_ and _camera_, respectively.
