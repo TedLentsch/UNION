@@ -57,8 +57,9 @@ Class-agnostic 3D object detection performance on [nuScenes](https://arxiv.org/a
 For each object discovery method, [CenterPoint](https://arxiv.org/pdf/2006.11275) has been trained with method's generated pseudo-bounding boxes on [nuScenes](https://arxiv.org/abs/1903.11027) training split (700 scenes).
 AAE is set to 1.0 by default for all methods.
 _L_ and _C_ stand for _LiDAR_ and _camera_, respectively.
+_ST_ stands for _self-training_.
 
-| Method       | Conference                                                       | Labels | Self-Training                 | AP ↑     | NDS ↑    | ATE ↓     | ASE ↓     | AOE ↓     | AVE ↓     |
+| Method       | Conference                                                       | Labels | ST                            | AP ↑     | NDS ↑    | ATE ↓     | ASE ↓     | AOE ↓     | AVE ↓     |
 |--------------|------------------------------------------------------------------|--------|-------------------------------|----------|----------|-----------|-----------|-----------|-----------|
 | HDBSCAN      | [JOSS'17](https://joss.theoj.org/papers/10.21105/joss.00205.pdf) | L      | :negative_squared_cross_mark: | 13.8     | 15.9     | **0.574** | 0.522     | 1.601     | 1.531     |
 | OYSTER       | [CVPR'23](https://arxiv.org/pdf/2311.02007)                      | L      | :ballot_box_with_check:       |  9.1     | 11.5     | 0.784     | 0.521     | 1.514     | -         |
@@ -70,20 +71,20 @@ _L_ and _C_ stand for _LiDAR_ and _camera_, respectively.
 ### Results on nuScenes [multi-class detection]
 Multi-class 3D object detection performance on [nuScenes](https://arxiv.org/abs/1903.11027) validation split (150 scenes).
 For each object discovery method, [CenterPoint](https://arxiv.org/pdf/2006.11275) has been trained with the method's generated pseudo-bounding boxes on [nuScenes](https://arxiv.org/abs/1903.11027) training split (700 scenes), and class-agnostic predictions are assigned to real classes based on their size, i.e. size prior (SP).
-Vehicle, pedestrian, and cyclist classes are used, see paper for more details.
+Vehicle (Veh.), pedestrian (Ped.), and cyclist (Cyc.) classes are used, see paper for more details.
 AAE is set to 1.0 by default for all methods and classes.
 _UNION-Xpc_ stands for UNION trained with X pseudo-classes.
 _L_ and _C_ stand for _LiDAR_ and _camera_, respectively.
 &dagger;Without clipping precision-recall curve, clipping is default for [nuScenes](https://arxiv.org/abs/1903.11027) evaluation.
 
-| Method            | Labels | mAP ↑     | NDS ↑     | Vehicle AP ↑ | Ped. AP ↑ | Cyclist AP ↑ | Cyclist AP&dagger; ↑ |
-|-------------------|--------|-----------|-----------|--------------|-----------|--------------|----------------------|
-| HDBSCAN+SP        | L      |  5.0      | 13.0      | 14.6         |  0.4      | **0.0**      | 1.3                  |
-| UNION+SP          | L+C    | 12.7      | 19.7      | **34.8**     |  3.4      | **0.0**      | 1.6                  |
-| UNION-05pc (ours) | L+C    | **24.0**  | **24.0**  | 30.3         | **41.6**  | **0.0**      | 0.8                  |
-| UNION-10pc (ours) | L+C    | 19.9      | 21.7      | 27.3         | 32.5      | **0.0**      | 0.5                  |
-| UNION-15pc (ours) | L+C    | 18.5      | 21.2      | 25.7         | 29.9      | **0.0**      | 0.4                  |
-| UNION-20pc (ours) | L+C    | 17.9      | 21.7      | 23.7         | 29.9      | **0.0**      | **4.2**              |
+| Method            | Labels | mAP ↑     | NDS ↑     | Veh. AP ↑ | Ped. AP ↑ | Cyc. AP ↑ | Cyc. AP&dagger; ↑ |
+|-------------------|--------|-----------|-----------|-----------|-----------|-----------|-------------------|
+| HDBSCAN+SP        | L      |  5.0      | 13.0      | 14.6      |  0.4      | **0.0**   | 1.3               |
+| UNION+SP          | L+C    | 12.7      | 19.7      | **34.8**  |  3.4      | **0.0**   | 1.6               |
+| UNION-05pc (ours) | L+C    | **24.0**  | **24.0**  | 30.3      | **41.6**  | **0.0**   | 0.8               |
+| UNION-10pc (ours) | L+C    | 19.9      | 21.7      | 27.3      | 32.5      | **0.0**   | 0.5               |
+| UNION-15pc (ours) | L+C    | 18.5      | 21.2      | 25.7      | 29.9      | **0.0**   | 0.4               |
+| UNION-20pc (ours) | L+C    | 17.9      | 21.7      | 23.7      | 29.9      | **0.0**   | **4.2**           |
 
 
 
