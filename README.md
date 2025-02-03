@@ -93,10 +93,10 @@ If UNION is useful to your research, please kindly recognize our contributions b
 </p>
 
 ```
-@article{lentsch2024union,
+@inproceedings{lentsch2024union,
   title={{UNION}: Unsupervised {3D} Object Detection using Object Appearance-based Pseudo-Classes},
   author={Lentsch, Ted and Caesar, Holger and Gavrila, Dariu M},
-  journal={Advances in Neural Information Processing Systems (NeurIPS)},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2024}
 }
 ```
