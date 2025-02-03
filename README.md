@@ -20,8 +20,8 @@
 
 ### Conda environment
 
-Create and activate an environment named ``UNION-Env`` using the commands below.
-You may need to install ``gcc`` by running the command ``sudo apt-get install gcc`` to be able to build wheels for pycocotools (required for nuscenes-devkit).
+Create and activate environment named ``UNION-Env`` using commands below.
+You may need to install ``gcc`` by running command ``sudo apt-get install gcc`` to be able to build wheels for pycocotools (required for nuscenes-devkit).
 
 ```
 conda env create -f conda/environment.yml
@@ -32,14 +32,14 @@ conda activate UNION-Env
 
 ### Download nuScenes
 
-The nuScenes dataset can be downloaded [here](https://www.nuscenes.org/nuscenes).
+[nuScenes](https://arxiv.org/abs/1903.11027) dataset can be downloaded [here](https://www.nuscenes.org/nuscenes).
 
 
 
 ### Generate pseudo-labels
 
-The UNION pipeline is implemented in the Jupyter notebook ``UNION-pipeline__Get-mobile-objects__nuScenes.ipynb``.
-Start Jupyter lab with the UNION-Env conda enviroment and execute the entire notebook to discover the mobile objects.
+UNION pipeline is implemented in Jupyter notebook ``UNION-pipeline__Get-mobile-objects__nuScenes.ipynb``.
+Start JupyterLab with UNION-Env conda enviroment activated and execute entire notebook to discover mobile objects.
 
 ```
 jupyter lab
@@ -53,29 +53,37 @@ Coming soon!
 
 
 ### Results on nuScenes [class-agnostic detection]
-Class-agnostic 3D object detection performance on the [nuScenes](https://arxiv.org/abs/1903.11027) validation split (150 scenes).
-For each object discovery method, the detector [CenterPoint](https://arxiv.org/pdf/2006.11275) has been trained with the method's generated pseudo-bounding boxes on the [nuScenes](https://arxiv.org/abs/1903.11027) training split (700 scenes).
-The AAE is set to 1.0 by default for all methods.
+Class-agnostic 3D object detection performance on [nuScenes](https://arxiv.org/abs/1903.11027) validation split (150 scenes).
+For each object discovery method, [CenterPoint](https://arxiv.org/pdf/2006.11275) has been trained with method's generated pseudo-bounding boxes on [nuScenes](https://arxiv.org/abs/1903.11027) training split (700 scenes).
+AAE is set to 1.0 by default for all methods.
 _L_ and _C_ stand for _LiDAR_ and _camera_, respectively.
 
-| Method           | Conference                                                       | Labels | Self-Training                 | AP ↑     | NDS ↑    | ATE ↓     | ASE ↓     | AOE ↓     | AVE ↓     |
-|------------------|------------------------------------------------------------------|--------|-------------------------------|----------|----------|-----------|-----------|-----------|-----------|
-| HDBSCAN          | [JOSS'17](https://joss.theoj.org/papers/10.21105/joss.00205.pdf) | L      | :negative_squared_cross_mark: | 13.8     | 15.9     | **0.574** | 0.522     | 1.601     | 1.531     |
-| OYSTER           | [CVPR'23](https://arxiv.org/pdf/2311.02007)                      | L      | :ballot_box_with_check:       |  9.1     | 11.5     | 0.784     | 0.521     | 1.514     | -         |
-| LISO             | [ECCV'24](https://arxiv.org/pdf/2403.07071)                      | L      | :ballot_box_with_check:       | 10.9     | 13.9     | 0.750     | **0.409** | 1.062     | -         |
-| UNION (ours)     | [NeurIPS'24](https://arxiv.org/pdf/2405.15688)                   | L+C    | :negative_squared_cross_mark: | **38.4** | **31.2** | 0.589     | 0.497     | **0.874** | **0.836** |
+| Method       | Conference                                                       | Labels | Self-Training                 | AP ↑     | NDS ↑    | ATE ↓     | ASE ↓     | AOE ↓     | AVE ↓     |
+|--------------|------------------------------------------------------------------|--------|-------------------------------|----------|----------|-----------|-----------|-----------|-----------|
+| HDBSCAN      | [JOSS'17](https://joss.theoj.org/papers/10.21105/joss.00205.pdf) | L      | :negative_squared_cross_mark: | 13.8     | 15.9     | **0.574** | 0.522     | 1.601     | 1.531     |
+| OYSTER       | [CVPR'23](https://arxiv.org/pdf/2311.02007)                      | L      | :ballot_box_with_check:       |  9.1     | 11.5     | 0.784     | 0.521     | 1.514     | -         |
+| LISO         | [ECCV'24](https://arxiv.org/pdf/2403.07071)                      | L      | :ballot_box_with_check:       | 10.9     | 13.9     | 0.750     | **0.409** | 1.062     | -         |
+| UNION (ours) | [NeurIPS'24](https://arxiv.org/pdf/2405.15688)                   | L+C    | :negative_squared_cross_mark: | **38.4** | **31.2** | 0.589     | 0.497     | **0.874** | **0.836** |
 
 
 
 ### Results on nuScenes [multi-class detection]
-Multi-class 3D object detection performance on the [nuScenes](https://arxiv.org/abs/1903.11027) validation split (150 scenes).
-For each object discovery method, the detector [CenterPoint](https://arxiv.org/pdf/2006.11275) has been trained with the method's generated pseudo-bounding boxes on the [nuScenes](https://arxiv.org/abs/1903.11027) training split (700 scenes), and class-agnostic predictions are assigned to real classes based on their size, i.e. size prior (SP).
-The classes vehicle, pedestrian, and cyclist are used (see paper for more details).
-The AAE is set to 1.0 by default for all methods and classes.
-UNION-Xpc stands for UNION trained with X pseudo-classes.
+Multi-class 3D object detection performance on [nuScenes](https://arxiv.org/abs/1903.11027) validation split (150 scenes).
+For each object discovery method, [CenterPoint](https://arxiv.org/pdf/2006.11275) has been trained with the method's generated pseudo-bounding boxes on [nuScenes](https://arxiv.org/abs/1903.11027) training split (700 scenes), and class-agnostic predictions are assigned to real classes based on their size, i.e. size prior (SP).
+Vehicle, pedestrian, and cyclist classes are used (see paper for more details).
+AAE is set to 1.0 by default for all methods and classes.
+_UNION-Xpc_ stands for UNION trained with X pseudo-classes.
 _L_ and _C_ stand for _LiDAR_ and _camera_, respectively.
+&dagger;Without clipping precision-recall curve, clipping is default for [nuScenes](https://arxiv.org/abs/1903.11027) evaluation.
 
-Coming soon!
+| Method            | Labels | mAP ↑     | NDS ↑     | Vehicle AP ↑ | Ped. AP ↑ | Cyclist AP ↑ | Cyclist AP&dagger; ↑ |
+|-------------------|--------|-----------|-----------|--------------|-----------|--------------|----------------------|
+| HDBSCAN+SP        | L      |  5.0      | 13.0      | 14.6         |  0.4      | **0.0**      | 1.3                  |
+| UNION+SP          | L+C    | 12.7      | 19.7      | **34.8**     |  3.4      | **0.0**      | 1.6                  |
+| UNION-05pc (ours) | L+C    | **24.0**  | **24.0**  | 30.3         | **41.6**  | **0.0**      | 0.8                  |
+| UNION-10pc (ours) | L+C    | 19.9      | 21.7      | 27.3         | 32.5      | **0.0**      | 0.5                  |
+| UNION-15pc (ours) | L+C    | 18.5      | 21.2      | 25.7         | 29.9      | **0.0**      | 0.4                  |
+| UNION-20pc (ours) | L+C    | 17.9      | 21.7      | 23.7         | 29.9      | **0.0**      | **4.2**              |
 
 
 
@@ -88,7 +96,7 @@ If UNION is useful to your research, please kindly recognize our contributions b
 @article{lentsch2024union,
   title={{UNION}: Unsupervised {3D} Object Detection using Object Appearance-based Pseudo-Classes},
   author={Lentsch, Ted and Caesar, Holger and Gavrila, Dariu M},
-  journal={Advances in Neural Information Processing Systems},
+  journal={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2024}
 }
 ```
