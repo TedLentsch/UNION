@@ -19,7 +19,6 @@
 
 
 ### Conda environment
-
 Create and activate environment named ``UNION-Env`` using commands below.
 You may need to install ``gcc`` by running command ``sudo apt-get install gcc`` to be able to build wheels for pycocotools (required for nuscenes-devkit).
 
@@ -31,13 +30,11 @@ conda activate UNION-Env
 
 
 ### Download nuScenes
-
 [nuScenes](https://arxiv.org/abs/1903.11027) dataset can be downloaded [here](https://www.nuscenes.org/nuscenes).
 
 
 
 ### Generate pseudo-labels
-
 UNION pipeline is implemented in Jupyter notebook ``UNION-pipeline__Get-mobile-objects__nuScenes.ipynb``.
 Start JupyterLab with UNION-Env conda enviroment activated and execute entire notebook to discover mobile objects.
 
