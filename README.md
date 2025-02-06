@@ -98,6 +98,8 @@ If UNION is useful to your research, please kindly recognize our contributions b
   title={{UNION}: Unsupervised {3D} Object Detection using Object Appearance-based Pseudo-Classes},
   author={Lentsch, Ted and Caesar, Holger and Gavrila, Dariu M},
   booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  pages={22028--22046},
+  volume={37},
   year={2024}
 }
 ```
