@@ -14,7 +14,7 @@
 
 
 ### Pipeline overview
-![](readme-data/UNION-pipeline-overview.png)
+![](figures/figure1-plots/figure1.jpg)
 
 
 
