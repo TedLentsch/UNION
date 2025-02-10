@@ -58,10 +58,10 @@ _ST_ stands for _self-training_.
 
 | Method       | Conference                                                       | Labels | ST                            | AP ↑     | NDS ↑    | ATE ↓     | ASE ↓     | AOE ↓     | AVE ↓     |
 |--------------|------------------------------------------------------------------|--------|-------------------------------|----------|----------|-----------|-----------|-----------|-----------|
-| HDBSCAN      | [JOSS'17](https://joss.theoj.org/papers/10.21105/joss.00205.pdf) | L      | :negative_squared_cross_mark: | 13.8     | 15.9     | **0.574** | 0.522     | 1.601     | 1.531     |
+| HDBSCAN      | [JOSS'17](https://joss.theoj.org/papers/10.21105/joss.00205.pdf) | L      | :negative_squared_cross_mark: | 13.8     | 15.7     | **0.583** | 0.531     | 1.517     | 1.556     |
 | OYSTER       | [CVPR'23](https://arxiv.org/pdf/2311.02007)                      | L      | :ballot_box_with_check:       |  9.1     | 11.5     | 0.784     | 0.521     | 1.514     | -         |
 | LISO         | [ECCV'24](https://arxiv.org/pdf/2403.07071)                      | L      | :ballot_box_with_check:       | 10.9     | 13.9     | 0.750     | **0.409** | 1.062     | -         |
-| UNION (ours) | [NeurIPS'24](https://arxiv.org/pdf/2405.15688)                   | L+C    | :negative_squared_cross_mark: | **38.4** | **31.2** | 0.589     | 0.497     | **0.874** | **0.836** |
+| UNION (ours) | [NeurIPS'24](https://arxiv.org/pdf/2405.15688)                   | L+C    | :negative_squared_cross_mark: | **39.5** | **31.7** | 0.590     | 0.506     | **0.876** | **0.837** |
 
 
 
