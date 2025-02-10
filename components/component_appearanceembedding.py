@@ -65,9 +65,9 @@ def get_transform() -> Compose:
 
 
 
-def get_image_featuremap_and_transformations(nusc:NuScenes, sample_record:Dict, sensor_name:str) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+def get_camera_transformations(nusc:NuScenes, sample_record:Dict, sensor_name:str) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     """
-    Load image, feature map (DINOv2), and homogeneous transformations.
+    Load homogeneous transformations.
     
     Args:
         nusc (NuScenes) : NuScenes Object.
@@ -210,12 +210,12 @@ def main__appearance_embedding(nusc:NuScenes, scenes:List, hyperparameters:Dict,
             T_vehicle_lidar      = scenes[scene_idx]['T_vehicle_lidar']
             T_lidar_vehicle      = torch.linalg.inv(T_vehicle_lidar.clone())
             
-            T_cam1_vehicle, T_camvehicle1_global, cam1_proj_matrix = get_image_featuremap_and_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[0])
-            T_cam2_vehicle, T_camvehicle2_global, cam2_proj_matrix = get_image_featuremap_and_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[1])
-            T_cam3_vehicle, T_camvehicle3_global, cam3_proj_matrix = get_image_featuremap_and_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[2])
-            T_cam4_vehicle, T_camvehicle4_global, cam4_proj_matrix = get_image_featuremap_and_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[3])
-            T_cam5_vehicle, T_camvehicle5_global, cam5_proj_matrix = get_image_featuremap_and_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[4])
-            T_cam6_vehicle, T_camvehicle6_global, cam6_proj_matrix = get_image_featuremap_and_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[5])
+            T_cam1_vehicle, T_camvehicle1_global, cam1_proj_matrix = get_camera_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[0])
+            T_cam2_vehicle, T_camvehicle2_global, cam2_proj_matrix = get_camera_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[1])
+            T_cam3_vehicle, T_camvehicle3_global, cam3_proj_matrix = get_camera_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[2])
+            T_cam4_vehicle, T_camvehicle4_global, cam4_proj_matrix = get_camera_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[3])
+            T_cam5_vehicle, T_camvehicle5_global, cam5_proj_matrix = get_camera_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[4])
+            T_cam6_vehicle, T_camvehicle6_global, cam6_proj_matrix = get_camera_transformations(nusc=nusc, sample_record=sample_record, sensor_name=sensor_names[5])
             
             
             # Get LiDAR points.
