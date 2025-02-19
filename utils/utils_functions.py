@@ -101,7 +101,7 @@ def get_scene_information(nusc:NuScenes) -> List:
 
 
 
-def get_lidar_sweep(nusc:NuScenes, lidar_token:str, radius:float=2.5) -> np.ndarray:
+def get_lidar_sweep(nusc:NuScenes, lidar_token:str, radius:float=2.5) -> torch.Tensor:
     """
     Loads LiDAR points, removes points close to sensor, and creates point cloud with shape (N,4).
     
