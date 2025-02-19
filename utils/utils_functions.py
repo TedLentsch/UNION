@@ -4,7 +4,6 @@ import torch
 from nuscenes.nuscenes import NuScenes
 from nuscenes.utils.data_classes import LidarPointCloud
 from nuscenes.utils.geometry_utils import transform_matrix
-from nuscenes.utils.map_mask import MapMask
 from pyquaternion import Quaternion
 from typing import List, Tuple
 
