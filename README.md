@@ -6,6 +6,7 @@
 
 
 
++ [2025-02-19] *Full code release finished!*
 + [2025-02-19] *Updated version on arXiv (v3)!*
 + [2024-12-11] *Poster presentation at NeurIPS 2024!*
 + [2024-10-31] *Camera-ready release on arXiv (v2)!*
@@ -40,18 +41,108 @@ conda activate UNION-Env
 
 
 
-### Generate pseudo-labels
+### Generate pseudo-labels with UNION
 UNION pipeline is implemented in Jupyter notebook ``UNION-pipeline__Get-mobile-objects__nuScenes.ipynb``.
-Start JupyterLab with UNION-Env conda enviroment activated and execute entire notebook to discover mobile objects.
+Start JupyterLab with ``UNION-Env`` conda enviroment activated and execute entire notebook to discover mobile objects.
 
 ```
+conda activate UNION-Env
 jupyter lab
 ```
 
 
 
-### Generate MMDetection3D files
-Coming soon!
+### Generate MMDetection3D files for training
+Create and activate environment named ``openmmlab`` using commands below.
+
+```
+conda create --name openmmlab python=3.8
+conda activate openmmlab
+```
+
+```
+conda install pytorch=2.1 torchvision=0.16 torchaudio=2.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install fsspec=2024.6
+conda install numpy=1.23
+```
+
+```
+pip install -U openmim
+mim install mmengine==0.9.0
+mim install mmcv==2.1.0
+mim install mmdet==3.2.0
+```
+
+Clone the mmdetection3d repository and checkout version v1.4 using the commands below.
+After that, install the package.
+
+```
+git clone https://github.com/open-mmlab/mmdetection3d.git
+cd mmdetection3d
+git checkout fe25f7a51d36e3702f961e198894580d83c4387b
+pip install -v -e .
+```
+
+Make a soft link for nuScenes in the data folder of mmdetection3d.
+After that, process the dataset to get the ``nuscenes_infos_train.pkl`` and ``nuscenes_infos_val.pkl`` files.
+
+```
+ln -s data/. PUT_YOUR_DIRECTORY_HERE_TO_NUSCENES/nuscenes
+python tools/create_data.py nuscenes --root-path ./data/nuscenes --out-dir ./data/nuscenes --extra-tag nuscenes
+```
+
+When the UNION pipeline has been executed, the mmdetection3d files for UNION can be generated.
+This is implemented in Jupyter notebook ``UNION-pipeline__Generate-mmdet3d-files__nuScenes.ipynb``.
+Start JupyterLab with ``UNION-Env`` conda enviroment activated and execute entire notebook.
+
+```
+conda activate UNION-Env
+jupyter lab
+```
+
+
+
+### Train with MMDetection3D and evaluate
+Some files need to be added to the mmdetection3d repository and some need to be replaced.
+This can be done using commands below.
+The files are located in the mmdetection3d-files folder.
+
+```
+cp mmdetection3d-files/CenterPoint*Training*.py mmdetection3d/configs/centerpoint/
+cp mmdetection3d-files/CenterPoint*Model*.py mmdetection3d/configs/_base_/models/
+cp mmdetection3d-files/nuscenes_metric.py mmdetection3d/mmdet3d/evaluation/metrics/nuscenes_metric.py
+cp mmdetection3d-files/nuscenes_dataset.py mmdetection3d/mmdet3d/datasets/nuscenes_dataset.py
+```
+
+Train [CenterPoint](https://arxiv.org/pdf/2006.11275) using the created .pkl files.
+
+```
+conda activate openmmlab
+cd mmdetection3d
+```
+
+All training commands follow below:
+
+```
+python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Class-Agnostic-Training__Labels-GT__UNION-file.py
+python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Class-Agnostic-Training__Labels-HDBSCAN__UNION-file.py
+python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Class-Agnostic-Training__Labels-Scene-Flow__UNION-file.py
+python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Class-Agnostic-Training__Labels-UNION__UNION-file.py
+python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Multi-Class-003-Training__Labels-GT__UNION-file.py
+python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Multi-Class-005pc-Training__Labels-UNION-005pc__UNION-file.py
+python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Multi-Class-010pc-Training__Labels-UNION-010pc__UNION-file.py
+python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Multi-Class-015pc-Training__Labels-UNION-015pc__UNION-file.py
+python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Multi-Class-020pc-Training__Labels-UNION-020pc__UNION-file.py
+```
+
+When the trainings have been done, the results can be computed.
+This is implemented in Jupyter notebook ``UNION-pipeline__Do-evaluation-after-training__nuScenes.ipynb``.
+Start JupyterLab with ``UNION-Env`` conda enviroment activated and execute entire notebook.
+
+```
+conda activate UNION-Env
+jupyter lab
+```
 
 
 
