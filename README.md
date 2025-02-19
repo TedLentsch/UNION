@@ -17,6 +17,11 @@
 ### Pipeline overview
 ![](figures/figure1-plots/figure1.jpg)
 
+The pipeline builds on top of multiple open source projects.
+In step 1, [RANSAC](https://github.com/scikit-learn/scikit-learn) is used for ground removal (BSD-3-Clause) and [HDBSCAN](https://github.com/scikit-learn-contrib/hdbscan) is used for spatial clustering (BSD-3-Clause).
+Step 2 uses [ICP-Flow](https://github.com/yanconglin/ICP-Flow) to get motion estimation (no license).
+Lastly, step 3 uses [DINOv2](https://github.com/facebookresearch/dinov2) for encoding the camera images (Apache-2.0 license).
+
 
 
 ### Conda environment
