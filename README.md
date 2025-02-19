@@ -6,6 +6,7 @@
 
 
 
++ [2025-02-19] *Updated version on arXiv (v3)!*
 + [2024-12-11] *Poster presentation at NeurIPS 2024!*
 + [2024-10-31] *Camera-ready release on arXiv (v2)!*
 + [2024-09-25] *UNION has been accepted for NeurIPS 2024!*
