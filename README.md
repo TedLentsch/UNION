@@ -37,7 +37,7 @@ conda activate UNION-Env
 
 
 ### Download nuScenes
-[nuScenes](https://arxiv.org/abs/1903.11027) dataset can be downloaded [here](https://www.nuscenes.org/nuscenes).
+The [nuScenes](https://arxiv.org/abs/1903.11027) dataset can be downloaded [here](https://www.nuscenes.org/nuscenes).
 
 
 
