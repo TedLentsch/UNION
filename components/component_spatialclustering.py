@@ -31,7 +31,7 @@ def fit_bounding_box(cluster_reference:torch.Tensor) -> Tuple[torch.Tensor, List
     max_beta     = -float('inf')
     choose_angle = None
     for angle in torch.arange(0, 90+delta, delta):
-        angle = 180/np.pi*angle
+        angle = np.pi/180*angle
         
         R_local_reference = torch.tensor([[ torch.cos(angle), torch.sin(angle)],
                                           [-torch.sin(angle), torch.cos(angle)]])
