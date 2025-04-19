@@ -106,7 +106,7 @@ jupyter lab
 ### Train with MMDetection3D and evaluate
 Some files need to be added to the mmdetection3d repository and some need to be replaced.
 This can be done using commands below.
-The files are located in the mmdetection3d-files folder.
+The files are located in the [mmdetection3d-files](mmdetection3d-files) folder.
 
 ```
 cp mmdetection3d-files/CenterPoint*Training*.py mmdetection3d/configs/centerpoint/
@@ -122,7 +122,7 @@ conda activate openmmlab
 cd mmdetection3d
 ```
 
-All training commands follow below:
+All training commands follow below (i.e. one command per experiment):
 
 ```
 python tools/train.py configs/centerpoint/CenterPoint-Pillar0200__second-secfpn-8xb4-cyclic-20e-nus-3d__Class-Agnostic-Training__Labels-GT__UNION-file.py
