@@ -74,7 +74,7 @@ mim install mmcv==2.1.0
 mim install mmdet==3.2.0
 ```
 
-Clone the mmdetection3d repository and checkout version v1.4 using the commands below.
+Clone the [mmdetection3d](https://github.com/open-mmlab/mmdetection3d) repository and checkout version v1.4 using the commands below.
 After that, install the package.
 
 ```
@@ -84,7 +84,7 @@ git checkout fe25f7a51d36e3702f961e198894580d83c4387b
 pip install -v -e .
 ```
 
-Make a soft link for nuScenes in the data folder of mmdetection3d.
+Make a soft link for nuScenes in the data folder of [mmdetection3d](https://github.com/open-mmlab/mmdetection3d).
 After that, process the dataset to get the ``nuscenes_infos_train.pkl`` and ``nuscenes_infos_val.pkl`` files.
 
 ```
@@ -92,7 +92,7 @@ ln -s data/. PUT_YOUR_DIRECTORY_HERE_TO_NUSCENES/nuscenes
 python tools/create_data.py nuscenes --root-path ./data/nuscenes --out-dir ./data/nuscenes --extra-tag nuscenes
 ```
 
-When the UNION pipeline has been executed, the mmdetection3d files for UNION can be generated.
+When the UNION pipeline has been executed, the [mmdetection3d](https://github.com/open-mmlab/mmdetection3d) files for UNION can be generated.
 This is implemented in Jupyter notebook ``UNION-pipeline__Generate-mmdet3d-files__nuScenes.ipynb``.
 Start JupyterLab with ``UNION-Env`` conda enviroment activated and execute entire notebook.
 
@@ -104,7 +104,7 @@ jupyter lab
 
 
 ### Train with MMDetection3D and evaluate
-Some files need to be added to the mmdetection3d repository and some need to be replaced.
+Some files need to be added to the [mmdetection3d](https://github.com/open-mmlab/mmdetection3d) repository and some need to be replaced.
 This can be done using commands below.
 The files are located in the [mmdetection3d-files](mmdetection3d-files) folder.
 
