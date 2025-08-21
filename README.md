@@ -6,6 +6,7 @@
 
 
 
++ [2025-08-21] *Pseudo-labels release on Hugging Face!*
 + [2025-02-19] *Full code release finished!*
 + [2025-02-19] *Updated version on arXiv (v3)!*
 + [2024-12-11] *Poster presentation at NeurIPS 2024!*
@@ -100,6 +101,8 @@ Start JupyterLab with ``UNION-Env`` conda enviroment activated and execute entir
 conda activate UNION-Env
 jupyter lab
 ```
+
+The MMDetection3D files can also be found on [Hugging Face](https://huggingface.co/datasets/TedLentsch/nuScenes-UNION-labels).
 
 
 
