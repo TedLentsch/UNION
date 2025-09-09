@@ -236,7 +236,7 @@ def main__appearance_embedding(nusc:NuScenes, scenes:List, hyperparameters:Dict,
             uvs_cam3, dist_to_cam3img_center = get_projections_and_distance_to_center(img_cam=imgs_cams_list[2], stride=stride, pc_global=pc_global.clone(), T_cam_vehicle=T_cam3_vehicle, T_camvehicle_global=T_camvehicle3_global, cam_proj_matrix=cam3_proj_matrix)
             uvs_cam4, dist_to_cam4img_center = get_projections_and_distance_to_center(img_cam=imgs_cams_list[3], stride=stride, pc_global=pc_global.clone(), T_cam_vehicle=T_cam4_vehicle, T_camvehicle_global=T_camvehicle4_global, cam_proj_matrix=cam4_proj_matrix)
             uvs_cam5, dist_to_cam5img_center = get_projections_and_distance_to_center(img_cam=imgs_cams_list[4], stride=stride, pc_global=pc_global.clone(), T_cam_vehicle=T_cam5_vehicle, T_camvehicle_global=T_camvehicle5_global, cam_proj_matrix=cam5_proj_matrix)
-            uvs_cam6, dist_to_cam6img_center = get_projections_and_distance_to_center(img_cam=imgs_cams_list[5], stride=stride, pc_global=pc_global.clone(), T_cam_vehicle=T_cam6_vehicle, T_camvehicle_global=T_camvehicle5_global, cam_proj_matrix=cam6_proj_matrix)
+            uvs_cam6, dist_to_cam6img_center = get_projections_and_distance_to_center(img_cam=imgs_cams_list[5], stride=stride, pc_global=pc_global.clone(), T_cam_vehicle=T_cam6_vehicle, T_camvehicle_global=T_camvehicle6_global, cam_proj_matrix=cam6_proj_matrix)
             
             
             # Get closest image index for each projected point.
