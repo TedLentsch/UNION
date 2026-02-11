@@ -32,7 +32,7 @@ You may need to install ``gcc`` by running the command ``sudo apt-get install gc
 In addition, we require mamba for installing the environment which can be installed by ``conda install mamba -n base -c conda-forge``.
 
 ```
-mamba env create -f environment.yml
+mamba env create -f conda/environment.yml
 conda activate UNION-Env
 ```
 
