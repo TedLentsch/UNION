@@ -58,14 +58,14 @@ jupyter lab
 Create and activate environment named ``openmmlab`` using commands below.
 
 ```
-conda create --name openmmlab python=3.8
+mamba create --name openmmlab python=3.8
 conda activate openmmlab
 ```
 
 ```
-conda install pytorch=2.1 torchvision=0.16 torchaudio=2.1 pytorch-cuda=12.1 -c pytorch -c nvidia
-conda install fsspec=2024.6
-conda install numpy=1.23
+mamba install pytorch=2.1 torchvision=0.16 torchaudio=2.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+mamba install fsspec=2024.6
+mamba install numpy=1.23
 ```
 
 ```
@@ -89,7 +89,7 @@ Make a soft link for nuScenes in the data folder of [mmdetection3d](https://gith
 After that, process the dataset to get the ``nuscenes_infos_train.pkl`` and ``nuscenes_infos_val.pkl`` files.
 
 ```
-ln -s data/. PUT_YOUR_DIRECTORY_HERE_TO_NUSCENES/nuscenes
+ln -s PUT_YOUR_DIRECTORY_HERE_TO_NUSCENES/nuscenes data/nuscenes
 python tools/create_data.py nuscenes --root-path ./data/nuscenes --out-dir ./data/nuscenes --extra-tag nuscenes
 ```
 
