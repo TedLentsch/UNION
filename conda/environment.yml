@@ -32,6 +32,11 @@ dependencies:
   - plyfile=1.1
   - eigen=3.4
 
+  # nuScenes
+  - pyquaternion
+  - scipy
+  - tqdm
+  
   # Jupyter and Widgets
   - jupyterlab=3.6
   - jupyterlab_widgets=1.1
