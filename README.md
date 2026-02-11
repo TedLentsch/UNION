@@ -38,6 +38,17 @@ conda activate UNION-Env
 
 
 
+### DINOv2 repo
+The latest DINOv2 version requires Python 3.10+. Our ``UNION-Env`` uses Python 3.8, so we pin a compatible DINOv2 commit and load it locally via ``torch.hub`` (``source='local'``).
+```
+cd PUT_YOUR_DIRECTORY_HERE_TO_UNION
+git clone https://github.com/facebookresearch/dinov2.git
+cd dinov2
+git checkout 85a24602099d397264d5b30461ad7f3bfd726ca1
+```
+
+
+
 ### Download nuScenes
 The [nuScenes](https://arxiv.org/abs/1903.11027) dataset can be downloaded [here](https://www.nuscenes.org/nuscenes).
 
