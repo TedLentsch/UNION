@@ -18,14 +18,14 @@ conda activate UNION-Env
 Create and activate environment named ``openmmlab`` using commands below. After this, mmdetection3d needs to be cloned. This is described in the main README from UNION.
 
 ```
-conda create --name openmmlab python=3.8
+mamba create --name openmmlab python=3.8
 conda activate openmmlab
 ```
 
 ```
-conda install pytorch=2.1 torchvision=0.16 torchaudio=2.1 pytorch-cuda=12.1 -c pytorch -c nvidia
-conda install fsspec=2024.6
-conda install numpy=1.23
+mamba install pytorch=2.1 torchvision=0.16 torchaudio=2.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+mamba install fsspec=2024.6
+mamba install numpy=1.23
 ```
 
 ```
