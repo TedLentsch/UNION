@@ -90,6 +90,7 @@ Clone the [mmdetection3d](https://github.com/open-mmlab/mmdetection3d) repositor
 After that, install the package.
 
 ```
+cd PUT_YOUR_DIRECTORY_HERE_TO_UNION
 git clone https://github.com/open-mmlab/mmdetection3d.git
 cd mmdetection3d
 git checkout fe25f7a51d36e3702f961e198894580d83c4387b
