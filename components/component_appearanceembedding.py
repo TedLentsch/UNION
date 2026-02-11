@@ -6,6 +6,7 @@ import torchvision
 import types
 from nuscenes.nuscenes import NuScenes
 from nuscenes.utils.geometry_utils import transform_matrix
+from pathlib import Path
 from pyquaternion import Quaternion
 from typing import List, Dict, Tuple
 from utils.utils_functions import get_lidar_sweep
@@ -171,7 +172,9 @@ def main__appearance_embedding(nusc:NuScenes, scenes:List, hyperparameters:Dict,
     stride       = hyperparameters['Step0__stride']
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model  = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14_reg').to(device)
+
+    dinov2_dir = Path(__file__).resolve().parents[1] / 'dinov2'
+    model  = torch.hub.load(str(dinov2_dir), 'dinov2_vitl14_reg', source='local').to(device)
     model.eval()
     
     transform = get_transform()
