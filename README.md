@@ -126,6 +126,7 @@ This can be done using commands below.
 The files are located in the [mmdetection3d-files](mmdetection3d-files) folder.
 
 ```
+cd PUT_YOUR_DIRECTORY_HERE_TO_UNION
 cp mmdetection3d-files/CenterPoint*Training*.py mmdetection3d/configs/centerpoint/
 cp mmdetection3d-files/CenterPoint*Model*.py mmdetection3d/configs/_base_/models/
 cp mmdetection3d-files/nuscenes_metric.py mmdetection3d/mmdet3d/evaluation/metrics/nuscenes_metric.py
@@ -136,6 +137,7 @@ Train [CenterPoint](https://arxiv.org/pdf/2006.11275) using the created .pkl fil
 
 ```
 conda activate openmmlab
+cd PUT_YOUR_DIRECTORY_HERE_TO_UNION
 cd mmdetection3d
 ```
 
