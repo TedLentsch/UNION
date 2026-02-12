@@ -733,7 +733,7 @@ def plot_qualitative_example(nusc:NuScenes, scenes:List, hyperparameters:Dict, i
     scene_idx              = 9 if USE_MINI_SPLIT else 840
     sample_idx             = 2
     annot_range_thres      = 50   # Unit: meters.
-    num_lidar_points_thres =  1   # Unit: 1.
+    num_lidar_points_thres = 1   # Unit: 1.
     
     
     # Get LiDAR points.
