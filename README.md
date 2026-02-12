@@ -56,7 +56,7 @@ The [nuScenes](https://arxiv.org/abs/1903.11027) dataset can be downloaded [here
 
 ### Generate pseudo-labels with UNION
 UNION pipeline is implemented in Jupyter notebook ``UNION-pipeline__Get-mobile-objects__nuScenes.ipynb``.
-Start JupyterLab with ``UNION-Env`` conda enviroment activated and execute entire notebook to discover mobile objects.
+Start JupyterLab with ``UNION-Env`` conda environment activated and execute entire notebook to discover mobile objects.
 
 ```
 conda activate UNION-Env
@@ -109,7 +109,7 @@ python tools/create_data.py nuscenes --root-path ./data/nuscenes --out-dir ./dat
 
 When the UNION pipeline has been executed, the [mmdetection3d](https://github.com/open-mmlab/mmdetection3d) files for UNION can be generated.
 This is implemented in Jupyter notebook ``UNION-pipeline__Generate-mmdet3d-files__nuScenes.ipynb``.
-Start JupyterLab with ``UNION-Env`` conda enviroment activated and execute entire notebook.
+Start JupyterLab with ``UNION-Env`` conda environment activated and execute entire notebook.
 
 ```
 conda activate UNION-Env
