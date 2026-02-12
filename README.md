@@ -101,6 +101,8 @@ Make a soft link for nuScenes in the data folder of [mmdetection3d](https://gith
 After that, process the dataset to get the ``nuscenes_infos_train.pkl`` and ``nuscenes_infos_val.pkl`` files.
 
 ```
+cd PUT_YOUR_DIRECTORY_HERE_TO_UNION
+cd mmdetection3d
 ln -s PUT_YOUR_DIRECTORY_HERE_TO_NUSCENES/nuscenes data/nuscenes
 python tools/create_data.py nuscenes --root-path ./data/nuscenes --out-dir ./data/nuscenes --extra-tag nuscenes
 ```
